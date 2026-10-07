@@ -1,0 +1,8 @@
+;; Apaga os objetos substituidos pela CORRECAO_FINAL (por handle).
+;; Rode no DWG entregue em 07/10 (ja com as correcoes gerais), antes de inserir CORRECAO_FINAL.dxf.
+(setq n 0 f 0)
+(foreach h (list "200F1" "200F2" "200F5" "200F6" "200FC" "200FD" "200FE" "20115" "20116" "20119" "2011A" "20120" "20121" "20122" "20139" "2013A" "2013D" "2013E" "20144" "20145" "20146" "2015D" "2015E" "20161" "20162" "20168" "20169" "2016A" "203D2" "203D3" "203D6" "203D7" "203DD" "203DE" "203DF" "203F6" "203F7" "203FA" "203FB" "20401") (if (setq e (handent h)) (progn (entdel e) (setq n (1+ n))) (setq f (1+ f))))
+(foreach h (list "20402" "20403" "2041A" "2041B" "2041E" "2041F" "20425" "20426" "20427" "2043E" "2043F" "20442" "20443" "20449" "2044A" "2044B" "20481" "20482" "20485" "20486" "2048C" "2048D" "2048E" "204C4" "204C5" "204C8" "204C9" "204CF" "204D0" "204D1" "204CB" "204BB" "2090E" "2090F" "20910" "20911" "20912" "20913" "208F4" "22212") (if (setq e (handent h)) (progn (entdel e) (setq n (1+ n))) (setq f (1+ f))))
+(foreach h (list "22213" "22214") (if (setq e (handent h)) (progn (entdel e) (setq n (1+ n))) (setq f (1+ f))))
+(princ (strcat "\nApagados: " (itoa n) " de 82. Nao encontrados: " (itoa f) "\n"))
+(princ)
