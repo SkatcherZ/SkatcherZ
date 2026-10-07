@@ -82,3 +82,14 @@ Caixa de passagem na saída do QD3/QD4. O slide diz "de preferência".
   - quantidade = traços em todos os eletrodutos refeitos;
   - 49 linhas de unifilar iguais à planilha (fase, DTM, IDR, seção e nº de fases antes do DTM).
 - Planilha recalculada no LibreOffice, sem erros de fórmula: IN ≤ DTM ≤ Iz′ e IDR ≥ DTM em todos os circuitos; alimentadores com ΔV ≤ 2% e Iz ≥ disjuntor.
+
+## Complemento (conferência do DesenhoFinal0710GpCDH)
+Conferi o `DesenhoFinal0710GpCDH`, tanto o DWG quanto o DXF exportado pelo AutoCAD. Ele bate com o resultado esperado em 13.687 dos 13.697 objetos. Faltavam 10 objetos do layer LUMINOTÉCNICO na área de Tornear e Chanfrar/Polimento:
+- as 6 cotas desse layer (com 0,15 m);
+- 2 pares de etiquetas de luminária "-01a-" / "79,5".
+
+Os originais desses objetos foram apagados pelo script, mas as versões novas não ficaram no desenho.
+
+**Como completar:** `INSERT` → `COMPLEMENTO_LUMINOTECNICO.dxf`, digitando o ponto 0,0, escala 1 e Explode marcado. Não precisa de script, porque não há nada para apagar. Depois do insert, confira que essas 6 cotas e as 2 etiquetas aparecem na área de Tornear e Chanfrar.
+
+Verificação: "DesenhoFinal0710GpCDH + COMPLEMENTO" é idêntico ao desenho validado (13.697 objetos, nenhuma diferença na comparação com tolerância de 0,01 m).
